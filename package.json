@@ -8,6 +8,7 @@
   },
   "keywords": [
     "postcss",
+    "postcss-plugin",
     "media-queries",
     "media",
     "queries",
