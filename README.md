@@ -1,6 +1,6 @@
 # PostCSS Unwrap @media
 
-[PostCSS](https://github.com/postcss/postcss) plugin to unwrap @media rules to make styles IE8 (and older) friendly.
+[PostCSS] plugin to unwrap @media rules to make styles IE8 (and older) friendly.
 
 
 ```css
@@ -34,3 +34,6 @@ postcss([ require('postcss-unwrap-at-media') ])
 ```
 
 See [PostCSS] docs for examples for your environment.
+
+
+[PostCSS]: https://github.com/postcss/postcss
