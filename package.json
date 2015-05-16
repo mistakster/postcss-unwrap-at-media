@@ -1,10 +1,13 @@
 {
   "name": "postcss-unwrap-at-media",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "PostCSS plugin to unwrap @media rules to make styles IE8 (and older) friendly.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "postcss": "4.x"
   },
   "keywords": [
     "postcss",
@@ -20,5 +23,9 @@
     "processing"
   ],
   "author": "Vladimir Kuznetsov <mistakster@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mistakster/postcss-unwrap-at-media"
+  }
 }
