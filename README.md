@@ -1,5 +1,7 @@
 # PostCSS Unwrap @media
 
+[![Build Status](https://travis-ci.org/mistakster/postcss-unwrap-at-media.svg?branch=master)](https://travis-ci.org/mistakster/postcss-unwrap-at-media)
+
 [PostCSS] plugin to unwrap @media rules to make styles IE8 (and older) friendly.
 
 
