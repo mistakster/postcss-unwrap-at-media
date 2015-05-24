@@ -2,11 +2,8 @@ var postcss = require('postcss');
 
 module.exports = postcss.plugin('postcss-unwrap-at-media"', function (opts) {
 	return function (css) {
-		css.eachAtRule(function (atRule) {
+		css.eachAtRule('media', function (atRule) {
 			var i, len, node;
-			if (atRule.name != 'media') {
-				return;
-			}
 			if (atRule.nodes && atRule.nodes.length) {
 				len = atRule.nodes.length - 1;
 				for (i = len; i >= 0; i--) {
