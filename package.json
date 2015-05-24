@@ -6,13 +6,13 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha"
   },
+  "dependencies": {
+    "postcss": "4.x"
+  },
   "devDependencies": {
     "mocha": "^2.2.5",
     "postcss": "^4.1.11",
     "should": "^6.0.3"
-  },
-  "peerDependencies": {
-    "postcss": "4.x"
   },
   "keywords": [
     "postcss",
