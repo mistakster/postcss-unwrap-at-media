@@ -7,11 +7,11 @@
     "test": "./node_modules/.bin/mocha"
   },
   "dependencies": {
-    "postcss": "4.x"
+    "postcss": "4.x",
+    "lodash": "^3.9.1"
   },
   "devDependencies": {
     "mocha": "^2.2.5",
-    "postcss": "^4.1.11",
     "should": "^6.0.3"
   },
   "keywords": [
