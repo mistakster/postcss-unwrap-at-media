@@ -22,22 +22,22 @@ module.exports = postcss.plugin('postcss-unwrap-at-media"', function (opts) {
 		opts.disallow = normalizeArray(opts.disallow);
 	}
 	return function (css) {
-		css.eachAtRule('media', function (atRule) {
+		css.walkAtRules('media', function (atRule) {
 			var i, len, node;
 			if (isAllowed(opts.disallow, atRule.params) && atRule.nodes && atRule.nodes.length) {
 				len = atRule.nodes.length - 1;
 				for (i = len; i >= 0; i--) {
 					node = atRule.nodes[i];
 					if (i === len) {
-						node.after = (node.after || '') + (atRule.after || '');
+						node.raws.after = (node.raws.after || '') + (atRule.raws.after || '');
 					}
 					if (i === 0) {
-						node.before = (atRule.before || '') + (node.before || '');
+						node.raws.before = (atRule.raws.before || '') + (node.raws.before || '');
 					}
 					atRule.parent.insertAfter(atRule, node);
 				}
 			}
-			atRule.removeSelf();
+			atRule.remove();
 		});
 	};
 });
