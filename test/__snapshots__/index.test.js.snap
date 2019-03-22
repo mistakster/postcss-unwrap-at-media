@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unwrap @media should delete a block with any of specified @media rules 1`] = `
+"p {
+    margin: 1em 0;
+}"
+`;
+
+exports[`unwrap @media should delete a block with particular @media rules 1`] = `
+"div {
+        color: red;
+    
+}
+
+p {
+    margin: 1em 0;
+}"
+`;
+
+exports[`unwrap @media should remove all @media rules 1`] = `
+"div {
+        color: red;
+    
+}"
+`;
+
+exports[`unwrap @media shouldn't touch other rules 1`] = `
+"p {
+    margin: 1em 0;
+}
+
+div {
+        color: red;
+    
+}"
+`;

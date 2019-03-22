@@ -12,7 +12,7 @@ function normalizeArray(arr) {
 
 function isAllowed(list, params) {
 	return !(list && list.some(function (value) {
-		return value == params;
+		return value === params;
 	}));
 }
 
