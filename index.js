@@ -1,8 +1,7 @@
 var postcss = require('postcss');
-var _ = require('lodash');
 
 function normalizeArray(arr) {
-	if (!_.isArray(arr)) {
+	if (!Array.isArray(arr)) {
 		arr = [arr];
 	}
 	return arr.map(function (value) {

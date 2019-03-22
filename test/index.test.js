@@ -24,7 +24,7 @@ describe('unwrap @media', function () {
 	it('should delete a block with particular @media rules', function () {
 		var result = postcss([plugin({ disallow: 'print' })])
 			.process(
-				'@media print {\n    div {\n        color: red;\n    }\n}\n\n' +
+				'@media print {\n    div {\n        color: black;\n    }\n}\n\n' +
 				'@media screen {\n    div {\n        color: red;\n    }\n}\n\n' +
 				'p {\n    margin: 1em 0;\n}'
 			);
@@ -34,7 +34,7 @@ describe('unwrap @media', function () {
 	it('should delete a block with any of specified @media rules', function () {
 		var result = postcss([plugin({ disallow: ['print', 'screen'] })])
 			.process(
-				'@media print {\n    div {\n        color: red;\n    }\n}\n\n' +
+				'@media print {\n    div {\n        color: black;\n    }\n}\n\n' +
 				'@media screen {\n    div {\n        color: red;\n    }\n}\n\n' +
 				'p {\n    margin: 1em 0;\n}'
 			);
