@@ -36,8 +36,8 @@ module.exports = postcss.plugin('postcss-unwrap-at-media"', function (opts) {
 					}
 					atRule.parent.insertAfter(atRule, node);
 				}
+				atRule.remove();
 			}
-			atRule.remove();
 		});
 	};
 });
