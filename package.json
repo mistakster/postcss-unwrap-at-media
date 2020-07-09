@@ -1,6 +1,6 @@
 {
   "name": "postcss-unwrap-at-media",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "PostCSS plugin to unwrap @media rules to make styles IE8 (and older) friendly.",
   "main": "index.js",
   "scripts": {
