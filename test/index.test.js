@@ -41,4 +41,19 @@ describe('unwrap @media', function () {
 		expect(result.css).toMatchSnapshot();
 	});
 
+	it('should delete a block with @media rules matches the predicate', function () {
+		function disallow(atRule) {
+			return /min-width: 720px/.test(atRule.params);
+		}
+
+		var result = postcss([plugin({ disallow: disallow })])
+			.process(
+				'@media print {\n    div {\n        color: black;\n    }\n}\n\n' +
+				'@media screen and (min-width: 720px) {\n    div {\n        color: blue;\n    }\n}\n\n' +
+				'@media screen {\n    div {\n        color: red;\n    }\n}\n\n' +
+				'p {\n    margin: 1em 0;\n}'
+			);
+		expect(result.css).toMatchSnapshot();
+	});
+
 });

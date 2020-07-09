@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`unwrap @media should delete a block with @media rules matches the predicate 1`] = `
+"div {
+        color: black;
+    
+}
+
+div {
+        color: red;
+    
+}
+
+p {
+    margin: 1em 0;
+}"
+`;
+
 exports[`unwrap @media should delete a block with any of specified @media rules 1`] = `
 "p {
     margin: 1em 0;

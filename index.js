@@ -1,17 +1,12 @@
 var postcss = require('postcss');
 
 function normalizeArray(arr) {
-	if (!Array.isArray(arr)) {
-		arr = [arr];
-	}
-	return arr.map(function (value) {
-		return '' + value;
-	});
+	return Array.isArray(arr) ? arr : [arr];
 }
 
-function isAllowed(list, params) {
+function isAllowed(list, atRule) {
 	return !(list && list.some(function (value) {
-		return value === params;
+		return typeof value === 'function' ? value(atRule) : value === atRule.params;
 	}));
 }
 
@@ -23,7 +18,7 @@ module.exports = postcss.plugin('postcss-unwrap-at-media"', function (opts) {
 	return function (css) {
 		css.walkAtRules('media', function (atRule) {
 			var i, len, node;
-			if (isAllowed(opts.disallow, atRule.params) && atRule.nodes && atRule.nodes.length) {
+			if (isAllowed(opts.disallow, atRule) && atRule.nodes && atRule.nodes.length) {
 				len = atRule.nodes.length - 1;
 				for (i = len; i >= 0; i--) {
 					node = atRule.nodes[i];
