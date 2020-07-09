@@ -58,5 +58,23 @@ gulp.task('default', function () {
 
 See [PostCSS] docs for examples for your environment.
 
+## Configuration
+
+You can provide a list of strings or functions to match unwanted @-rules.
+
+```js
+postcss([ unwrapAtMedia({ disallow: 'print' })])
+```
+
+```js
+postcss([ unwrapAtMedia({ disallow: ['print', 'screen'] })])
+```
+
+```js
+postcss([ unwrapAtMedia({ disallow: [
+    'print',
+    atRule => /min-width: 720px/.test(atRule.params)
+] })])
+```
 
 [PostCSS]: https://github.com/postcss/postcss
